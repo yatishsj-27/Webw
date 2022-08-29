@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS.css">
+    </head>
+        <div class="Heading">
+            <img src="logo1.png" class="logo">
+            <div class="NavBar">
+                <a href="../HomePage.html"><button class="but1">Home</button></a>
+                <button class="but2">Pricing</button>
+                <a href="stocks&investments.html"><button class="but3">Stocks & Investments</button></a>
+                <a href="Aboutus.html"><button class="but4">About Us</button></a>   
+                <a href="LoginPage.html"><button class="but6">Login</button></a>           
+                <div class="dropdown">
+                    <button class="dropbtn">Support</button>
+                        <div class="dropdown-content">
+                            <a href="Support1.html">How to Register</a>
+                            <a href="Support2.html">Contact Details</a>
+                            <a href="Support3.html">FAQs</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="plans">
+            <div class="BasicPlan" id="BasicPack">
+                <h1 class="basp">Basic Pack</h1>
+                <p class="bast">This is the Starter Plan for our Customers. This plan is for only creating demat account. Its Features are :-</p>
+                <ul class="basl">
+                    <li class="list">₹0 Commissions On investing in Mutual Funds and IPOs</li>
+                    <li class="list">₹0 Account Maintenance To mantain your Demat Account</li>
+                    <li class="list">₹20 Brokerage On Equity, F&O, commodity and currency orders</li>
+                    <li class="list1">₹0 Account Opening To open a Demat + Trading account</li>
+                    <li class="list1">₹199 Deposit money(Will be returned when pack is over)</li>
+                </ul>
+
+
+                <a href="BrokenPage.html"><button class="buypremium1">SUBSCRIBE</button></a>
+                
+            </div>
+            <div class="Plus" id="VIPPack">
+                <h1 class="plusp">VIP Pack</h1>
+                <p class="plust">This is the VIP Plan for our Customers. Its Features are :-</p>
+                <ul class="plusl">
+                    <li class="list">₹0 Commissions On investing in Mutual Funds and IPOs</li>
+                    <li class="list">₹0 Account Maintenance To mantain your Demat Account</li>
+                    <li class="list">₹20 Brokerage On Equity, F&O, commodity and currency orders</li>
+                    <li class="list">Special offers</li>
+                    <li class="list">₹0 Account Opening To open a Demat + Trading account</li>
+                    <li class="list">Personal Manager</li>
+                    <li class="list">Monthly Bonus</li>
+                    <li class="list">₹299 Deposit money(Will be returned when pack is over)</li>
+                </ul>
+
+            
+                <a href="BrokenPage.html"><button class="buypremium">SUBSCRIBE</button></a>
+            
+                
+            </div>
+        </div>
+        <div class="Footer">
+            <p class="disclaimer">This website was only made for the purpose of submission in the Envisage 2022: Web Warriors Competition, its use in any commercial or corporate way is strictly prohibited. I hope you find this Helpful.</p>
+            <a href="Support1.html" class="foot1">How to Register</a>
+            <a href="Support2.html" class="foot1">Contact Us</a>
+            <a href="Support3.html" class="foot1">FAQs</a>
+            <a href="#" class="foot1">Back to Top</a>
+        </div>
+
+        <div class="ABC">
+            
+        </div>
+    </body>
+    <script>
+        function myFunction()
+        {
+            //alert(sessionStorage.getItem("queryTagRef"));
+
+            var LoggedUser = sessionStorage.getItem("getUserName");
+            //alert("LoggedUser >>" +LoggedUser );
+            if (LoggedUser != null) 
+            {
+                var linkvalue = document.getElementById("loginLogout");
+                linkvalue.textContent =LoggedUser;
+            }
+            document.getElementById("view").innerHTML= sessionStorage.getItem("queryTagView");
+        }
+    </script>
+</html>

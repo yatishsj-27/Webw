@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS.css">
+    </head>
+    <body>
+        <div class="Heading">
+            <img src="logo1.png" class="logo">
+            <div class="NavBar">
+                <a href="../HomePage.html"><button class="but1">Home</button></a>
+                <a href="Pricing.html"><button class="but2">Pricing</button></a>
+                <a href="stocks&investments.html"><button class="but3">Stocks & Investments</button></a>
+                <a href="Aboutus.html"><button class="but4">About Us</button></a>   
+                <a href="LoginPage.html"><button class="but6">Login</button></a>           
+                <div class="dropdown">
+                    <button class="dropbtn">Support</button>
+                    <div class="dropdown-content">
+                        <a href="Support1.html">How to Register</a>
+                        <a href="Support2.html">Contact Details</a>
+                        <a href="Support3.html">FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Whatwedo" id="RegisterWhatwedo">
+
+            Enter Mail ID :<input type="text" class="newUser" name="" id="newUserName" placeholder="Enter User Name">  <br> <br>
+            Password      :<input type="password" class="newUser" name="" id="newUserPass" placeholder="Enter password">  <br> <br>
+            Re-Password   :<input type="password" class="newUser" name="" id="newUserRePass" placeholder="Enter Re-password"> <br> <br>
+
+            <button id="signUpBtn"  onclick="createUserAccount()"> Submit</button>
+           
+        </div>
+        <div class="Footer">
+            <p class="disclaimer">This website was only made for the purpose of submission in the Envisage 2022: Web Warriors Competition, its use in any commercial or corporate way is strictly prohibited. I hope you find this Helpful.</p>
+            <a href="Support1.html" class="foot1">How to Register</a>
+            <a href="Support2.html" class="foot1">Contact Us</a>
+            <a href="Support3.html" class="foot1">FAQs</a>
+            <a href="#" class="foot1">Back to Top</a>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var UserCerdintial = [];
+        function createUserAccount()
+        {
+            //alert(sessionStorage.getItem("userCredentials"));
+            if(sessionStorage.getItem("userCredentials"))
+            {
+                UserCerdintial =  JSON.parse(sessionStorage.getItem("userCredentials"));
+            }
+            
+            //alert(JSON.stringify(UserCerdintial))
+            var getUserName = document.getElementById("newUserName").value;
+            var getPassword = document.getElementById("newUserPass").value;
+            var getRePassword = document.getElementById("newUserRePass").value;
+            var checkDuplicateValue = false;
+
+             UserCerdintial.forEach(element =>{
+                if (getUserName == element.userName) {
+                    checkDuplicateValue =true;
+                    return false;
+                }
+
+             });
+
+
+            if (checkDuplicateValue) {
+                alert("This is user already available...")
+            }else{
+
+                if ((getUserName !="") && (getPassword !=""&&getPassword  == getRePassword)) 
+                {
+                    //alert( getUserName + getPassword + getRePassword);
+                    var item = {};
+                    item.userName = getUserName;
+                    item.password = getRePassword;
+
+                    UserCerdintial.push(item);
+                    sessionStorage.setItem('myArray', JSON.stringify(UserCerdintial));
+                    location.href = "./LoginPage.html";
+                }else{
+                    alert("Fill all Fields...")
+                }
+            }
+            
+
+
+        }
+    </script>
+</html>
+<script type="text/javascript">
+    var imageArray =  [{"image": "./Items/GrowthEX.jpg"},{"image":"./Items/GrowthEX1.JPG"},{"image":"./Items/GrowthEX2.JPG"},{"image":"./Items/GrowthEX3.JPG"},{"image":"./Items/GrowthEX4.JPG"},{"image":"./Items/GrowthEX5.JPG"},{"image":"./Items/GrowthEX6.JPG"},{"image":"./Items/GrowthEX7.JPG"}];
+    function myFunction()
+    {
+        var index = 0;
+        //alert(sessionStorage.getItem("queryTagRef"));
+        setInterval(function()
+        {
+            if (index == imageArray.length) {
+                index = 0;
+            }else{
+                index++;
+            }
+
+            document.getElementById("mainImage").src = imageArray[index].image;
+            //alert(index)
+
+        },3000);
+
+
+
+        
+        var LoggedUser = sessionStorage.getItem("getUserName");
+        //alert("LoggedUser >>" +LoggedUser );
+        if (LoggedUser != null) 
+        {
+            var linkvalue = document.getElementById("loginLogout");
+            linkvalue.textContent =LoggedUser;
+        }
+        document.getElementById("view").innerHTML= sessionStorage.getItem("queryTagView");
+    }
+
+    function ViewQuery() {
+        // body...
+
+         location.href = "Items/QueryView.html";
+
+    }
+
+</script>
+</html>

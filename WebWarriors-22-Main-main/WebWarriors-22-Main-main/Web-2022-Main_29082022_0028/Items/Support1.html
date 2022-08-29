@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS.css">
+    </head>
+        <div class="Heading">
+            <img src="logo1.png" class="logo">
+            <div class="NavBar">
+                <a href="../HomePage.html"><button class="but1">Home</button></a>
+                <a href="Pricing.html"><button class="but2">Pricing</button></a>
+                <a href="stocks&investments.html"><button class="but3">Stocks & Investments</button></a>
+                <a href="Aboutus.html"><button class="but4">About Us</button></a>   
+                <a href="LoginPage.html"><button class="but6">Login</button></a>           
+                <div class="dropdown">
+                    <button class="dropbtn">Support</button>
+                    <div class="dropdown-content">
+                        <a href="Support1.html">How to Register</a>
+                        <a href="Support2.html">Contact Details</a>
+                        <a href="Support3.html">FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Whatwedo" id="HowToRegister">
+            <p class="regipara">How to login on our Website:- </p>
+            <p class="regipara2">Follow the steps below for successful registration:
+                <p class="regipara3"> - Go to Login Page</p>
+                <p class="regipara4"> - Click on the create account(If you are a new visitor)</p>
+                <p class="regipara5"> - Enter a username and password and re-check the credentials again and click on submit</p>
+                <p class="regipara6"> - Enter the membership code provided to you and password to login instantly</p>
+        </div>
+
+       
+
+        <div class="Footer">
+            <p class="disclaimer">This website was only made for the purpose of submission in the Envisage 2022: Web Warriors Competition, its use in any commercial or corporate way is strictly prohibited. I hope you find this Helpful.</p>
+            <a href="Support1.html" class="foot1">How to Register</a>
+            <a href="Support2.html" class="foot1">Contact Us</a>
+            <a href="Support3.html" class="foot1">FAQs</a>
+            <a href="#" class="foot1">Back to Top</a>
+        </div>
+    </body>
+    <script>
+    
+        function myFunction()
+        {
+            //alert(sessionStorage.getItem("queryTagRef"));
+
+            var LoggedUser = sessionStorage.getItem("getUserName");
+            //alert("LoggedUser >>" +LoggedUser );
+            if (LoggedUser != null) 
+            {
+                var linkvalue = document.getElementById("loginLogout");
+                linkvalue.textContent =LoggedUser;
+            }
+            document.getElementById("view").innerHTML= sessionStorage.getItem("queryTagView");
+        }
+    </script>
+</html>
+
+<script type="text/javascript">
+    var imageArray =  [{"image": "./Items/GrowthEX.jpg"},{"image":"./Items/GrowthEX1.JPG"},{"image":"./Items/GrowthEX2.JPG"},{"image":"./Items/GrowthEX3.JPG"},{"image":"./Items/GrowthEX4.JPG"},{"image":"./Items/GrowthEX5.JPG"},{"image":"./Items/GrowthEX6.JPG"},{"image":"./Items/GrowthEX7.JPG"}];
+    function myFunction()
+    {
+        var index = 0;
+        //alert(sessionStorage.getItem("queryTagRef"));
+        setInterval(function()
+        {
+            if (index == imageArray.length) {
+                index = 0;
+            }else{
+                index++;
+            }
+
+            document.getElementById("mainImage").src = imageArray[index].image;
+            //alert(index)
+
+        },3000);
+
+
+
+        
+        var LoggedUser = sessionStorage.getItem("getUserName");
+        //alert("LoggedUser >>" +LoggedUser );
+        if (LoggedUser != null) 
+        {
+            var linkvalue = document.getElementById("loginLogout");
+            linkvalue.textContent =LoggedUser;
+        }
+        document.getElementById("view").innerHTML= sessionStorage.getItem("queryTagView");
+    }
+
+    function ViewQuery() {
+        // body...
+
+         location.href = "Items/QueryView.html";
+
+    }
+
+</script>
+</html>
